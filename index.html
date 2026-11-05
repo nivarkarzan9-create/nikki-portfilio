@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6f8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Nikki is a Computer Engineering student at the University of Sulaimani, interested in software, hardware, and useful technology."
+    />
+    <script>
+      (() => {
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem("nikki-theme");
+        } catch {
+          // The device preference still works if browser storage is unavailable.
+        }
+
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme;
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#1b1920" : "#f8f6f8";
+      })();
+    </script>
+    <title>Nikki — Computer Engineering &amp; Development</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner page-width">
+        <a class="brand" href="#home" aria-label="Nikki, home">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>Nikki</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Toggle dark mode">
+            <span class="theme-toggle-icon theme-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+            </span>
+            <span class="theme-toggle-icon theme-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M20.2 15.3A8.7 8.7 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"></path></svg>
+            </span>
+            <span class="theme-toggle-thumb" aria-hidden="true"></span>
+          </button>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#what-i-do">What I do</a>
+          <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero page-width" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Computer Engineering student · Software &amp; hardware developer</p>
+          <h1 id="hero-title">Hi, I’m <span class="name-accent">Nikki.</span><br />Building across <em>software</em> and <em>hardware.</em></h1>
+          <p class="hero-intro">
+            I’m a Computer Engineering student curious about how technology works, from the
+            first lines of code to the systems that bring an idea to life.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="button button-quiet" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-footnote"><span aria-hidden="true">✳</span> Curious by nature. Building with purpose.</p>
+        </div>
+
+        <div class="hero-art reveal" aria-label="Abstract illustration connecting software and hardware" role="img">
+          <div class="art-topline"><span>IDEA / SYSTEM</span><span>01 — 02</span></div>
+          <svg class="system-art" viewBox="0 0 560 500" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="dot-grid" width="18" height="18" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.15" fill="var(--diagram-dot)" />
+              </pattern>
+              <linearGradient id="orb-shade" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="var(--diagram-orb-start)" />
+                <stop offset="1" stop-color="var(--diagram-orb-end)" />
+              </linearGradient>
+            </defs>
+            <rect x="34" y="35" width="492" height="420" rx="20" fill="url(#dot-grid)" opacity=".62" />
+            <circle cx="280" cy="245" r="157" fill="none" stroke="var(--diagram-orbit)" stroke-width="1.5" />
+            <circle cx="280" cy="245" r="124" fill="none" stroke="var(--diagram-orbit-soft)" stroke-width="1" stroke-dasharray="4 8" />
+            <path d="M98 281h84l37-45h122l35 44h86" fill="none" stroke="var(--diagram-path)" stroke-width="2" />
+            <path d="M160 168h74l25 31h91" fill="none" stroke="var(--diagram-path-soft)" stroke-width="1.5" />
+            <path d="M216 326h57l28-33h103" fill="none" stroke="var(--diagram-path-soft)" stroke-width="1.5" />
+            <circle cx="98" cy="281" r="5" fill="var(--diagram-path)" />
+            <circle cx="462" cy="280" r="5" fill="var(--diagram-path)" />
+            <circle cx="160" cy="168" r="4" fill="var(--diagram-node)" />
+            <circle cx="404" cy="293" r="4" fill="var(--diagram-node)" />
+            <circle cx="280" cy="245" r="86" fill="url(#orb-shade)" />
+            <circle cx="280" cy="245" r="66" fill="var(--diagram-center)" />
+            <rect x="242" y="207" width="76" height="76" rx="21" fill="var(--diagram-core)" />
+            <path d="M267 264v-38h7v16l14-16h9l-15 17 17 21h-9l-13-16-3 3v13z" fill="var(--diagram-core-ink)" />
+            <circle cx="280" cy="92" r="10" fill="var(--diagram-center)" stroke="var(--diagram-path)" stroke-width="2" />
+            <circle cx="280" cy="398" r="10" fill="var(--diagram-center)" stroke="var(--diagram-path)" stroke-width="2" />
+            <circle cx="122" cy="245" r="7" fill="var(--diagram-orbit)" />
+            <circle cx="438" cy="245" r="7" fill="var(--diagram-orbit)" />
+            <path d="M82 116h64M414 380h64M411 115h45M92 381h47" stroke="var(--diagram-path-soft)" stroke-width="1.4" stroke-linecap="round" />
+            <circle cx="147" cy="116" r="3" fill="var(--diagram-path)" />
+            <circle cx="414" cy="380" r="3" fill="var(--diagram-path)" />
+          </svg>
+          <div class="art-label art-label-left"><span class="label-index">A</span><span>SOFTWARE</span></div>
+          <div class="art-label art-label-right"><span class="label-index">B</span><span>HARDWARE</span></div>
+          <div class="art-caption">One curious mind, many ways to build.</div>
+        </div>
+      </section>
+
+      <div class="section-rule page-width" aria-hidden="true"><span>01</span><span></span><span>INTRODUCTION</span></div>
+
+      <section class="section about-section page-width" id="about" aria-labelledby="about-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A little about me</p>
+          <h2 id="about-title">Learning how things<br />work, <em>then making them.</em></h2>
+        </div>
+        <div class="about-content reveal">
+          <p class="lead-copy">I’m Nikki, a Computer Engineering student at the University of Sulaimani.</p>
+          <p>
+            I’m drawn to the space where software and hardware meet. I like understanding
+            what happens beneath an interface as much as thinking about what a person sees
+            and uses. For me, the fun is in asking good questions, exploring how a system
+            fits together, and finding a useful way to bring an idea to life.
+          </p>
+          <div class="education-card">
+            <div class="education-icon" aria-hidden="true">◎</div>
+            <div><span class="card-kicker">CURRENTLY STUDYING</span><strong>Computer Engineering</strong><span>University of Sulaimani</span></div>
+            <span class="education-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="page-width section">
+          <div class="section-heading section-heading-wide reveal">
+            <div><p class="eyebrow">Tools &amp; foundations</p><h2 id="skills-title">A toolkit in <em>progress.</em></h2></div>
+            <p class="section-aside">These are starter placeholders. Replace them with the languages, tools, and areas you’ve actually explored.</p>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-card reveal"><span class="skill-number">01</span><h3>Programming languages</h3><p>Add the languages you use</p><span class="skill-add" aria-hidden="true">＋</span></article>
+            <article class="skill-card reveal"><span class="skill-number">02</span><h3>Front-end development</h3><p>Add confirmed front-end skills</p><span class="skill-add" aria-hidden="true">＋</span></article>
+            <article class="skill-card reveal"><span class="skill-number">03</span><h3>Back-end development</h3><p>Add confirmed back-end skills</p><span class="skill-add" aria-hidden="true">＋</span></article>
+            <article class="skill-card reveal"><span class="skill-number">04</span><h3>Hardware &amp; systems</h3><p>Add hardware and engineering topics</p><span class="skill-add" aria-hidden="true">＋</span></article>
+            <article class="skill-card reveal"><span class="skill-number">05</span><h3>Tools &amp; technologies</h3><p>Add tools you’ve worked with</p><span class="skill-add" aria-hidden="true">＋</span></article>
+          </div>
+          <p class="skills-note"><span aria-hidden="true">✳</span> No skill ratings or experience claims are assumed.</p>
+        </div>
+      </section>
+
+      <section class="section projects-section page-width" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading section-heading-wide reveal">
+          <div><p class="eyebrow">Selected work</p><h2 id="projects-title">Projects, <em>in the making.</em></h2></div>
+          <p class="section-aside">A place for real builds, the questions behind them, and what you learned along the way.</p>
+        </div>
+        <p class="project-disclaimer reveal">The cards below are editable placeholders. Their artwork is decorative, not a screenshot of a completed project.</p>
+        <div class="projects-grid">
+          <!-- Replace each decorative .project-art panel with a real screenshot and useful alt text when available. -->
+          <article class="project-card reveal">
+            <div class="project-art project-art-one" aria-hidden="true"><span class="art-tag">PROJECT SLOT 01</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">01</div><span class="art-corner">＋</span></div>
+            <div class="project-body"><div class="project-title-row"><span class="project-index">01 / SOFTWARE</span><span class="project-state">ADD A PROJECT</span></div><h3>Add your first project</h3><p>Replace this note with the problem you explored, your approach, and one thing you learned.</p><div class="project-details"><span>TECHNOLOGIES</span><p>Add confirmed tools</p><span>LINKS</span><p>Repository URL · Live URL</p></div></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-art project-art-two" aria-hidden="true"><span class="art-tag">PROJECT SLOT 02</span><div class="window-card"><span></span><span></span><span></span><div class="window-lines"></div></div><div class="window-orbit"></div><span class="art-corner">＋</span></div>
+            <div class="project-body"><div class="project-title-row"><span class="project-index">02 / WEB</span><span class="project-state">ADD A PROJECT</span></div><h3>Add a web project</h3><p>Describe what it does and which parts you designed, built, or are still improving.</p><div class="project-details"><span>TECHNOLOGIES</span><p>Add confirmed tools</p><span>LINKS</span><p>Repository URL · Live URL</p></div></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-art project-art-three" aria-hidden="true"><span class="art-tag">PROJECT SLOT 03</span><div class="board"><span class="board-chip">N</span><i></i><i></i><i></i><i></i><b></b><b></b><b></b></div><div class="board-path path-one"></div><div class="board-path path-two"></div><span class="art-corner">＋</span></div>
+            <div class="project-body"><div class="project-title-row"><span class="project-index">03 / HARDWARE</span><span class="project-state">ADD A PROJECT</span></div><h3>Add a hardware build</h3><p>Share the system or device you worked on and the part of the build that interested you most.</p><div class="project-details"><span>TECHNOLOGIES</span><p>Add confirmed tools</p><span>LINKS</span><p>Repository URL · Live URL</p></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="what-section" id="what-i-do" aria-labelledby="what-title">
+        <div class="page-width section">
+          <div class="section-heading reveal"><p class="eyebrow">Areas I’m interested in</p><h2 id="what-title">Many layers.<br /><em>One connected world.</em></h2></div>
+          <div class="interest-grid">
+            <article class="interest-card reveal"><span class="interest-icon" aria-hidden="true">⌘</span><div><span class="interest-index">01</span><h3>Full-stack web</h3><p>Exploring how thoughtful interfaces connect to the systems behind them.</p></div><span class="interest-arrow" aria-hidden="true">↗</span></article>
+            <article class="interest-card reveal"><span class="interest-icon" aria-hidden="true">{ }</span><div><span class="interest-index">02</span><h3>Software development</h3><p>Turning a clear idea into useful, understandable software.</p></div><span class="interest-arrow" aria-hidden="true">↗</span></article>
+            <article class="interest-card reveal"><span class="interest-icon" aria-hidden="true">⌬</span><div><span class="interest-index">03</span><h3>Hardware development</h3><p>Learning how components and code can work together in a real system.</p></div><span class="interest-arrow" aria-hidden="true">↗</span></article>
+            <article class="interest-card reveal"><span class="interest-icon" aria-hidden="true">◎</span><div><span class="interest-index">04</span><h3>Engineering solutions</h3><p>Using curiosity and technical problem-solving to explore practical ideas.</p></div><span class="interest-arrow" aria-hidden="true">↗</span></article>
+          </div>
+          <p class="interest-footnote">These are interests and learning areas, not a list of claimed client services.</p>
+        </div>
+      </section>
+
+      <section class="contact-section page-width" id="contact" aria-labelledby="contact-title">
+        <div class="contact-main reveal"><p class="eyebrow eyebrow-light">Open to good conversations</p><h2 id="contact-title">Let’s make something <em>useful.</em></h2><p>If you’re interested in technology, learning, or building ideas together, I’d be glad to hear from you.</p><p class="contact-reminder">Add your contact details below before sharing this site.</p></div>
+        <div class="contact-options reveal" aria-label="Contact details to personalize">
+          <div class="contact-option"><span>EMAIL</span><strong>Add your email address</strong><span class="contact-icon" aria-hidden="true">↗</span></div>
+          <div class="contact-option"><span>GITHUB</span><strong>Add your profile URL</strong><span class="contact-icon" aria-hidden="true">↗</span></div>
+          <div class="contact-option"><span>LINKEDIN</span><strong>Add your profile URL</strong><span class="contact-icon" aria-hidden="true">↗</span></div>
+          <div class="contact-option"><span>OTHER</span><strong>Add another professional profile</strong><span class="contact-icon" aria-hidden="true">↗</span></div>
+        </div>
+        <span class="contact-watermark" aria-hidden="true">N</span>
+      </section>
+    </main>
+
+    <footer class="site-footer page-width">
+      <a class="brand footer-brand" href="#home" aria-label="Nikki, back to top"><span class="brand-mark" aria-hidden="true">N</span><span>Nikki</span></a>
+      <p>Computer Engineering student · Building across software and hardware</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+      <span class="copyright">© <span id="copyright-year">2026</span> Nikki</span>
+    </footer>
+  </body>
+</html>

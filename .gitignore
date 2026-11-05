@@ -1,0 +1,14 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor settings and local workspace files
+.vscode/
+
+# Netlify local state
+.netlify/
+
+# Dependencies and logs if tooling is added later
+node_modules/
+*.log
